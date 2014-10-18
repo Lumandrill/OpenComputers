@@ -26,9 +26,7 @@ gpu.set(1,10,"║ Set All: 10% 30% 50% 70% 90% 100%   ║   0%               100
 gpu.set(1,11,"╚════════════════════════════════════════════════════════════════╝")
 
 
---Feetching and displying rod names
 --Checking if the reactor is active or even exists
-
 local reactorActive = br.getActive(0)
 local reactorConnected = br.getConnected(0)
 if reactorConnected == true
@@ -41,10 +39,10 @@ if reactorConnected == true
 end
 
 
---Generating the rodlevel output
+--Generating the rodlevel output and getting the names
 local rodLevel = br.getControlRodLevel(0)
 local rodName = br.getControlRodName(0)
-rodAmount = br.getNumberOfControlRods(0)
+local rodAmount = br.getNumberOfControlRods(0)
 
 
 if rodAmount >= 0
@@ -111,9 +109,6 @@ if rodAmount >= 4
 	else
 	gpu.set(30,8,"N/A")
 end
-
-
-
 
 --Getting the stored amount of RF and making the bar
 local energyStored = br.getEnergyStored(0)
